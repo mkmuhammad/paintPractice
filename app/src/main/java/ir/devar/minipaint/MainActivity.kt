@@ -5,6 +5,7 @@ import android.content.res.Resources
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
+import android.view.View.SYSTEM_UI_FLAG_FULLSCREEN
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.ColorInt
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
+        binding.root.systemUiVisibility = SYSTEM_UI_FLAG_FULLSCREEN
         setContentView(binding.root)
 
         binding.paintingBtnFont1.setOnClickListener(this)
@@ -51,6 +53,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
         binding.paintingVioletBtn.setOnLongClickListener(this)
         binding.paintingBlackBtn.setOnLongClickListener(this)
         binding.paintingWhiteBtn.setOnLongClickListener(this)
+
+        binding.paintingBtnEraser.setOnLongClickListener(this)
 
         Toast.makeText(this, "Long Click To Change Background", Toast.LENGTH_LONG).show()
 
@@ -290,6 +294,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
                 R.id.painting_white_btn -> {
                     setBackColor(resources.getColor(R.color.white))
                 }
+                R.id.painting_btn_eraser -> {
+                    eraseAll()
+                }
             }
         }
         return true
@@ -297,5 +304,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
 
     private fun setBackColor(@ColorInt int: Int) {
         binding.paintView.setBackColor(int)
+    }
+    private fun eraseAll(){
+        binding.paintView.eraseAll()
     }
 }

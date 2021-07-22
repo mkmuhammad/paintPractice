@@ -15,7 +15,7 @@ import kotlin.math.abs
  */
 private const val STROKE_WIDTH = 12f
 
-class MyCanvasView(context: Context,attributeSet: AttributeSet) : View(context,attributeSet) {
+class MyCanvasView(context: Context, attributeSet: AttributeSet) : View(context, attributeSet) {
 
     private lateinit var extraCanvas: Canvas
     private lateinit var extraBitmap: Bitmap
@@ -125,16 +125,9 @@ class MyCanvasView(context: Context,attributeSet: AttributeSet) : View(context,a
         return paint.color
     }
 
-    fun getBackgroundColor(): Int {
-        return backgroundColor
-    }
 
     fun setLineWidth(width: Int) {
         paint.strokeWidth = width.toFloat()
-    }
-
-    fun getLineWidth(): Float {
-        return paint.strokeWidth
     }
 
     fun setEraser() {
@@ -143,6 +136,11 @@ class MyCanvasView(context: Context,attributeSet: AttributeSet) : View(context,a
 
     fun setBackColor(color: Int) {
         extraCanvas.drawColor(color)
+        postInvalidate()
+    }
+
+    fun eraseAll() {
+        onSizeChanged(width, height, width, height)
         postInvalidate()
     }
 
