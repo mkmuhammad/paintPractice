@@ -117,28 +117,33 @@ class MyCanvasView(context: Context,attributeSet: AttributeSet) : View(context,a
         path.reset()
     }
 
-    fun setDrawingColor(color: Int){
+    fun setDrawingColor(color: Int) {
         paint.color = color
     }
 
-    fun getDrawingColor(): Int{
+    fun getDrawingColor(): Int {
         return paint.color
     }
 
-    fun getBackgroundColor():Int{
-        return  backgroundColor
+    fun getBackgroundColor(): Int {
+        return backgroundColor
     }
 
-    fun setLineWidth(width: Int){
+    fun setLineWidth(width: Int) {
         paint.strokeWidth = width.toFloat()
     }
 
-    fun getLineWidth():Float{
+    fun getLineWidth(): Float {
         return paint.strokeWidth
     }
 
-    fun setEraser(){
+    fun setEraser() {
         paint.color = backgroundColor
+    }
+
+    fun setBackColor(color: Int) {
+        extraCanvas.drawColor(color)
+        postInvalidate()
     }
 
 }

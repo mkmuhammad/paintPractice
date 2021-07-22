@@ -6,12 +6,13 @@ import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.annotation.ColorInt
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.button.MaterialButton
 import ir.devar.minipaint.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity(), View.OnClickListener {
+class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClickListener {
 
     private lateinit var binding: ActivityMainBinding
     private var currentStrokeCode: Int = 1
@@ -39,6 +40,20 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         binding.paintingVioletBtn.setOnClickListener(this)
         binding.paintingBlackBtn.setOnClickListener(this)
         binding.paintingWhiteBtn.setOnClickListener(this)
+
+
+        binding.paintingRedBtn.setOnLongClickListener(this)
+        binding.paintingOrangeBtn.setOnLongClickListener(this)
+        binding.paintingYellowBtn.setOnLongClickListener(this)
+        binding.paintingGreenBtn.setOnLongClickListener(this)
+        binding.paintingBlueBtn.setOnLongClickListener(this)
+        binding.paintingPurpleBtn.setOnLongClickListener(this)
+        binding.paintingVioletBtn.setOnLongClickListener(this)
+        binding.paintingBlackBtn.setOnLongClickListener(this)
+        binding.paintingWhiteBtn.setOnLongClickListener(this)
+
+        Toast.makeText(this, "Long Click To Change Background", Toast.LENGTH_LONG).show()
+
     }
 
     override fun onClick(v: View?) {
@@ -48,13 +63,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     selectPencil(it)
                     setColor(Color.BLACK, it)
                     setFont(10, it)
-                    selectFontBtn(it, currentStrokeCode,Color.BLACK)
+                    selectFontBtn(it, currentStrokeCode, Color.BLACK)
                 }
                 R.id.painting_btn_eraser -> {
                     selectEraser(it)
                     //default values of eraser
                     setFont(40, it)
-                    selectFontBtn(it, currentStrokeCode,Color.BLACK)
+                    selectFontBtn(it, currentStrokeCode, Color.BLACK)
                 }
                 R.id.painting_btn_font1 -> {
                     setFont(10, it)
@@ -144,7 +159,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         val currentStroke = getCurrentStrokeCode(currentStrokeCode)
         setFont(currentStroke, view)
-        selectFontBtn(view, currentStrokeCode,binding.paintView.getDrawingColor())
+        selectFontBtn(view, currentStrokeCode, binding.paintView.getDrawingColor())
         unSelectEraser(view)
 
         //draw stroke around pencil
@@ -180,7 +195,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     //draw color inside font btn by specify number of font btn --default is black
-    private fun selectFontBtn(view: View, font: Int,color: Int) {
+    private fun selectFontBtn(view: View, font: Int, color: Int) {
         val fontString = when (font) {
             1 -> "font1"
             2 -> "font2"
@@ -243,5 +258,44 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             5 -> 50
             else -> 10
         }
+    }
+
+    override fun onLongClick(v: View?): Boolean {
+        v?.let {
+            when (v.id) {
+                R.id.painting_red_btn -> {
+                    setBackColor(resources.getColor(R.color.colorPaintRed))
+                }
+                R.id.painting_orange_btn -> {
+                    setBackColor(resources.getColor(R.color.colorPaintOrange))
+                }
+                R.id.painting_yellow_btn -> {
+                    setBackColor(resources.getColor(R.color.colorPaintYellow))
+                }
+                R.id.painting_green_btn -> {
+                    setBackColor(resources.getColor(R.color.colorPaintGreen))
+                }
+                R.id.painting_blue_btn -> {
+                    setBackColor(resources.getColor(R.color.colorPaintBlue))
+                }
+                R.id.painting_purple_btn -> {
+                    setBackColor(resources.getColor(R.color.colorPaintPurple))
+                }
+                R.id.painting_violet_btn -> {
+                    setBackColor(resources.getColor(R.color.colorPaintViolet))
+                }
+                R.id.painting_black_btn -> {
+                    setBackColor(resources.getColor(R.color.black))
+                }
+                R.id.painting_white_btn -> {
+                    setBackColor(resources.getColor(R.color.white))
+                }
+            }
+        }
+        return true
+    }
+
+    private fun setBackColor(@ColorInt int: Int) {
+        binding.paintView.setBackColor(int)
     }
 }
