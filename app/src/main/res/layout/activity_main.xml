@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <ir.devar.minipaint.MyCanvasView
-        android:id="@+id/paintView1"
+        android:id="@+id/paintView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
@@ -21,6 +21,7 @@
         android:layout_height="wrap_content"
         android:background="#E7E7E7"
         android:orientation="vertical"
+        android:contentDescription="grandParent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -29,6 +30,7 @@
             android:id="@+id/paint_upperLL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:contentDescription="upperLL"
             android:background="#E7E7E7"
             android:orientation="horizontal">
 
@@ -40,6 +42,7 @@
                 android:layout_gravity="center"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="40dp"
+                android:contentDescription="pencil"
                 app:cornerRadius="100dp"
                 app:icon="@drawable/pencil"
                 app:iconGravity="textEnd"
@@ -57,6 +60,7 @@
                 android:layout_height="25dp"
                 android:layout_gravity="center"
                 android:layout_marginEnd="35dp"
+                android:contentDescription="font1"
                 android:backgroundTint="#000000"
                 app:cornerRadius="100dp"
                 app:strokeColor="#000000"
@@ -69,6 +73,7 @@
                 android:layout_height="26dp"
                 android:layout_gravity="center"
                 android:layout_marginEnd="35dp"
+                android:contentDescription="font2"
                 app:cornerRadius="100dp"
                 app:strokeColor="#000000"
                 app:strokeWidth="2dp" />
@@ -80,6 +85,7 @@
                 android:layout_height="29dp"
                 android:layout_gravity="center"
                 android:layout_marginEnd="35dp"
+                android:contentDescription="font3"
                 app:cornerRadius="100dp"
                 app:strokeColor="#000000"
                 app:strokeWidth="2dp" />
@@ -91,6 +97,7 @@
                 android:layout_height="34dp"
                 android:layout_gravity="center"
                 android:layout_marginEnd="35dp"
+                android:contentDescription="font4"
                 app:cornerRadius="100dp"
                 app:strokeColor="#000000"
                 app:strokeWidth="2dp" />
@@ -102,6 +109,7 @@
                 android:layout_height="37dp"
                 android:layout_gravity="center"
                 android:layout_marginEnd="35dp"
+                android:contentDescription="font5"
                 app:cornerRadius="100dp"
                 app:strokeColor="#000000"
                 app:strokeWidth="2dp" />
@@ -114,6 +122,7 @@
                 android:layout_gravity="center"
                 app:cornerRadius="100dp"
                 app:icon="@drawable/eraser"
+                android:contentDescription="eraser"
                 app:iconGravity="textEnd"
                 app:iconPadding="0dp"
                 app:iconSize="20dp"
@@ -130,6 +139,7 @@
             android:layout_gravity="center"
             android:background="#D6D6D6"
             android:gravity="center"
+            android:contentDescription="dividerLL"
             android:orientation="vertical" />
 
         <LinearLayout
@@ -144,81 +154,108 @@
                 android:layout_width="29dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="10dp"
-                android:layout_marginEnd="18dp"
-                android:backgroundTint="#ff0000"
+                android:layout_marginEnd="15dp"
+                android:backgroundTint="@color/colorPaintRed"
+                android:contentDescription="redBtn"
                 app:cornerRadius="100dp"
-                app:strokeColor="#FFFFFF"
-                app:strokeWidth="3.5dp" />
+                app:strokeColor="@color/white"
+                app:strokeWidth="3.5dp"
+                style="?android:attr/buttonBarButtonStyle" />
 
             <Button
                 android:id="@+id/painting_orange_btn"
                 android:layout_width="29dp"
                 android:layout_height="40dp"
-                android:layout_marginEnd="18dp"
-                android:backgroundTint="#E26A00"
+                android:layout_marginEnd="15dp"
+                android:backgroundTint="@color/colorPaintOrange"
+                android:contentDescription="orangeBtn"
                 app:cornerRadius="100dp"
-                app:strokeColor="#FFFFFF"
-                app:strokeWidth="3.5dp" />
+                app:strokeColor="@color/white"
+                app:strokeWidth="3.5dp"
+                style="?android:attr/buttonBarButtonStyle" />
 
             <Button
                 android:id="@+id/painting_yellow_btn"
                 android:layout_width="29dp"
                 android:layout_height="40dp"
-                android:layout_marginEnd="18dp"
-                android:backgroundTint="#EBC400"
+                android:layout_marginEnd="15dp"
+                android:backgroundTint="@color/colorPaintYellow"
+                android:contentDescription="yellowBtn"
                 app:cornerRadius="100dp"
-                app:strokeColor="#FFFFFF"
-                app:strokeWidth="3.5dp" />
+                app:strokeColor="@color/white"
+                app:strokeWidth="3.5dp"
+                style="?android:attr/buttonBarButtonStyle" />
 
             <Button
                 android:id="@+id/painting_green_btn"
                 android:layout_width="29dp"
                 android:layout_height="40dp"
-                android:layout_marginEnd="18dp"
-                android:backgroundTint="#00E312"
+                android:layout_marginEnd="15dp"
+                android:backgroundTint="@color/colorPaintGreen"
+                android:contentDescription="greenBtn"
                 app:cornerRadius="100dp"
-                app:strokeColor="#FFFFFF"
-                app:strokeWidth="3.5dp" />
+                app:strokeColor="@color/white"
+                app:strokeWidth="3.5dp"
+                style="?android:attr/buttonBarButtonStyle" />
 
             <Button
                 android:id="@+id/painting_blue_btn"
                 android:layout_width="29dp"
                 android:layout_height="40dp"
-                android:layout_marginEnd="18dp"
-                android:backgroundTint="#007AF1"
+                android:layout_marginEnd="15dp"
+                android:backgroundTint="@color/colorPaintBlue"
+                android:contentDescription="blueBtn"
                 app:cornerRadius="100dp"
-                app:strokeColor="#FFFFFF"
-                app:strokeWidth="3.5dp" />
+                app:strokeColor="@color/white"
+                app:strokeWidth="3.5dp"
+                style="?android:attr/buttonBarButtonStyle" />
 
             <Button
                 android:id="@+id/painting_purple_btn"
                 android:layout_width="29dp"
                 android:layout_height="40dp"
-                android:layout_marginEnd="18dp"
-                android:backgroundTint="#7E00F0"
+                android:layout_marginEnd="15dp"
+                android:backgroundTint="@color/colorPaintPurple"
+                android:contentDescription="purpleBtn"
                 app:cornerRadius="100dp"
-                app:strokeColor="#FFFFFF"
-                app:strokeWidth="3.5dp" />
+                app:strokeColor="@color/white"
+                app:strokeWidth="3.5dp"
+                style="?android:attr/buttonBarButtonStyle" />
 
             <Button
                 android:id="@+id/painting_violet_btn"
                 android:layout_width="29dp"
                 android:layout_height="40dp"
-                android:layout_marginEnd="18dp"
-                android:backgroundTint="#F300D4"
+                android:layout_marginEnd="15dp"
+                android:backgroundTint="@color/colorPaintViolet"
+                android:contentDescription="violetBtn"
                 app:cornerRadius="100dp"
-                app:strokeColor="#FFFFFF"
-                app:strokeWidth="3.5dp" />
+                app:strokeColor="@color/white"
+                app:strokeWidth="3.5dp"
+                style="?android:attr/buttonBarButtonStyle" />
 
             <Button
                 android:id="@+id/painting_black_btn"
                 android:layout_width="29dp"
                 android:layout_height="40dp"
-                android:backgroundTint="#1E1E1E"
+                android:layout_marginEnd="15dp"
+                android:backgroundTint="@color/black"
+                android:contentDescription="blackBtn"
                 app:cornerRadius="100dp"
-                app:strokeColor="#FFFFFF"
-                app:strokeWidth="3.5dp" />
+                app:strokeColor="@color/white"
+                app:strokeWidth="3.5dp"
+                style="?android:attr/buttonBarButtonStyle" />
 
+            <Button
+                android:id="@+id/painting_white_btn"
+                android:layout_width="29dp"
+                android:layout_height="40dp"
+                android:backgroundTint="@color/white"
+                android:contentDescription="whiteBtn"
+                app:cornerRadius="100dp"
+                app:strokeColor="@color/black"
+                app:strokeWidth="3.5dp"
+                style="?android:attr/buttonBarButtonStyle" />
 
         </LinearLayout>
     </LinearLayout>

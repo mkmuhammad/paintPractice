@@ -3,7 +3,6 @@ package ir.devar.minipaint
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
-import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewConfiguration
@@ -22,7 +21,7 @@ class MyCanvasView(context: Context,attributeSet: AttributeSet) : View(context,a
     private lateinit var extraBitmap: Bitmap
 
     private val backgroundColor = ResourcesCompat.getColor(resources, R.color.colorBackground, null)
-    private val drawColor = ResourcesCompat.getColor(resources, R.color.colorPaint, null)
+    private val drawColor = ResourcesCompat.getColor(resources, R.color.black, null)
     private val paint = Paint().apply {
         color = drawColor
         // Smooths out edges of what is drawn without affecting shape.
@@ -118,5 +117,28 @@ class MyCanvasView(context: Context,attributeSet: AttributeSet) : View(context,a
         path.reset()
     }
 
+    fun setDrawingColor(color: Int){
+        paint.color = color
+    }
+
+    fun getDrawingColor(): Int{
+        return paint.color
+    }
+
+    fun getBackgroundColor():Int{
+        return  backgroundColor
+    }
+
+    fun setLineWidth(width: Int){
+        paint.strokeWidth = width.toFloat()
+    }
+
+    fun getLineWidth():Float{
+        return paint.strokeWidth
+    }
+
+    fun setEraser(){
+        paint.color = backgroundColor
+    }
 
 }

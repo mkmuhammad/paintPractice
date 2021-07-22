@@ -8,6 +8,15 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="colorBackground">#FFFF5500</color>
-    <color name="colorPaint">#FFFFEB3B</color>
+    <color name="colorBackground">#FFFFFF</color>
+    <color name="colorPaintYellow">#FFFFEB3B</color>
+
+    <color name="colorPaintOrange">#E26A00</color>
+    <color name="colorPaintPurple">#7E00F0</color>
+    <color name="colorPaintViolet">#F300D4</color>
+    <color name="colorPaintRed">#ff0000</color>
+    <color name="colorPaintBlue">#007AF1</color>
+    <color name="colorPaintGreen">#00E312</color>
+
+    <color name="font_def_back">#E7E7E7</color>
 </resources>
