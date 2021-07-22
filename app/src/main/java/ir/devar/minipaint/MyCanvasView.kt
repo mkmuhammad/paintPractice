@@ -2,6 +2,7 @@ package ir.devar.minipaint
 
 import android.content.Context
 import android.graphics.*
+import android.util.AttributeSet
 import android.util.Log
 import android.view.MotionEvent
 import android.view.View
@@ -15,7 +16,7 @@ import kotlin.math.abs
  */
 private const val STROKE_WIDTH = 12f
 
-class MyCanvasView(context: Context) : View(context) {
+class MyCanvasView(context: Context,attributeSet: AttributeSet) : View(context,attributeSet) {
 
     private lateinit var extraCanvas: Canvas
     private lateinit var extraBitmap: Bitmap

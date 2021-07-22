@@ -6,13 +6,222 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+    <ir.devar.minipaint.MyCanvasView
+        android:id="@+id/paintView1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#E7E7E7"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:id="@+id/paint_upperLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#E7E7E7"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/painting_btn_pencil"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="37dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="40dp"
+                app:cornerRadius="100dp"
+                app:icon="@drawable/pencil"
+                app:iconGravity="textEnd"
+                app:iconPadding="0dp"
+                app:iconSize="20dp"
+                app:iconTint="@android:color/transparent"
+                app:iconTintMode="add"
+                app:strokeColor="#AAAAAA"
+                app:strokeWidth="3dp" />
+
+            <Button
+                android:id="@+id/painting_btn_font1"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="13dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="35dp"
+                android:backgroundTint="#000000"
+                app:cornerRadius="100dp"
+                app:strokeColor="#000000"
+                app:strokeWidth="2dp" />
+
+            <Button
+                android:id="@+id/painting_btn_font2"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="15dp"
+                android:layout_height="26dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="35dp"
+                app:cornerRadius="100dp"
+                app:strokeColor="#000000"
+                app:strokeWidth="2dp" />
+
+            <Button
+                android:id="@+id/painting_btn_font3"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="17dp"
+                android:layout_height="29dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="35dp"
+                app:cornerRadius="100dp"
+                app:strokeColor="#000000"
+                app:strokeWidth="2dp" />
+
+            <Button
+                android:id="@+id/painting_btn_font4"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="22dp"
+                android:layout_height="34dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="35dp"
+                app:cornerRadius="100dp"
+                app:strokeColor="#000000"
+                app:strokeWidth="2dp" />
+
+            <Button
+                android:id="@+id/painting_btn_font5"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="25dp"
+                android:layout_height="37dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="35dp"
+                app:cornerRadius="100dp"
+                app:strokeColor="#000000"
+                app:strokeWidth="2dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/painting_btn_eraser"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="37dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                app:cornerRadius="100dp"
+                app:icon="@drawable/eraser"
+                app:iconGravity="textEnd"
+                app:iconPadding="0dp"
+                app:iconSize="20dp"
+                app:iconTint="@android:color/transparent"
+                app:iconTintMode="add"
+                app:strokeColor="#AAAAAA"
+                app:strokeWidth="0dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="370dp"
+            android:layout_height="3dp"
+            android:layout_gravity="center"
+            android:background="#D6D6D6"
+            android:gravity="center"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:id="@+id/paintLowerLL"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#E7E7E7"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/painting_red_btn"
+                android:layout_width="29dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="18dp"
+                android:backgroundTint="#ff0000"
+                app:cornerRadius="100dp"
+                app:strokeColor="#FFFFFF"
+                app:strokeWidth="3.5dp" />
+
+            <Button
+                android:id="@+id/painting_orange_btn"
+                android:layout_width="29dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="18dp"
+                android:backgroundTint="#E26A00"
+                app:cornerRadius="100dp"
+                app:strokeColor="#FFFFFF"
+                app:strokeWidth="3.5dp" />
+
+            <Button
+                android:id="@+id/painting_yellow_btn"
+                android:layout_width="29dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="18dp"
+                android:backgroundTint="#EBC400"
+                app:cornerRadius="100dp"
+                app:strokeColor="#FFFFFF"
+                app:strokeWidth="3.5dp" />
+
+            <Button
+                android:id="@+id/painting_green_btn"
+                android:layout_width="29dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="18dp"
+                android:backgroundTint="#00E312"
+                app:cornerRadius="100dp"
+                app:strokeColor="#FFFFFF"
+                app:strokeWidth="3.5dp" />
+
+            <Button
+                android:id="@+id/painting_blue_btn"
+                android:layout_width="29dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="18dp"
+                android:backgroundTint="#007AF1"
+                app:cornerRadius="100dp"
+                app:strokeColor="#FFFFFF"
+                app:strokeWidth="3.5dp" />
+
+            <Button
+                android:id="@+id/painting_purple_btn"
+                android:layout_width="29dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="18dp"
+                android:backgroundTint="#7E00F0"
+                app:cornerRadius="100dp"
+                app:strokeColor="#FFFFFF"
+                app:strokeWidth="3.5dp" />
+
+            <Button
+                android:id="@+id/painting_violet_btn"
+                android:layout_width="29dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="18dp"
+                android:backgroundTint="#F300D4"
+                app:cornerRadius="100dp"
+                app:strokeColor="#FFFFFF"
+                app:strokeWidth="3.5dp" />
+
+            <Button
+                android:id="@+id/painting_black_btn"
+                android:layout_width="29dp"
+                android:layout_height="40dp"
+                android:backgroundTint="#1E1E1E"
+                app:cornerRadius="100dp"
+                app:strokeColor="#FFFFFF"
+                app:strokeWidth="3.5dp" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,9 +12,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val myCanvasView = MyCanvasView(this)
-        myCanvasView.systemUiVisibility = SYSTEM_UI_FLAG_FULLSCREEN
-        myCanvasView.contentDescription = getString(R.string.canvasContentDescription)
-        setContentView(myCanvasView)
+//        val myCanvasView = MyCanvasView(this)
+//        myCanvasView.systemUiVisibility = SYSTEM_UI_FLAG_FULLSCREEN
+//        myCanvasView.contentDescription = getString(R.string.canvasContentDescription)
+//        setContentView(myCanvasView)
     }
 }
