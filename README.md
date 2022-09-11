@@ -1,6 +1,6 @@
 # paintPractice
-android pain application
-it's a mini Paint Practice Project application which is in **Kotlin** and uses **CustomView**s and **ViewBinding**   
+Android Paint Application.\n
+It's a Mini Paint Practice Project Application Which Is Written In **Kotlin** and uses **CustomView**s and **ViewBinding**   
    
    
    here is the result:   
