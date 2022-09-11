@@ -1,5 +1,5 @@
 # paintPractice
-Android Paint Application.\n
+Android Paint Application.
 It's a Mini Paint Practice Project Application Which Is Written In **Kotlin** and uses **CustomView**s and **ViewBinding**   
    
    
